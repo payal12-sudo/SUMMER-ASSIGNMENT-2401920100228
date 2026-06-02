@@ -1,0 +1,101 @@
+# Day 2: Learned Constructors and Object Initialization in C++
+
+
+Today I learned about Constructors in C++ and how they are used to initialize objects automatically when they are created.
+
+## What I Learned
+
+### Constructor
+A constructor is a special member function of a class that is called automatically when an object is created.
+
+### Features of Constructors
+
+- Constructor name is the same as the class name.
+- Constructors do not have a return type.
+- They are called automatically when an object is created.
+- Used to initialize object data.
+
+## Example Program
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+
+    Student() {
+        name = "Payal";
+        age = 20;
+    }
+
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.display();
+
+    return 0;
+}
+```
+
+## Output
+
+```
+Name: Payal
+Age: 20
+```
+
+## Types of Constructors
+
+### 1. Default Constructor
+
+```cpp
+Student() {
+    name = "Unknown";
+    age = 0;
+}
+```
+
+### 2. Parameterized Constructor
+
+```cpp
+Student(string n, int a) {
+    name = n;
+    age = a;
+}
+```
+
+### Example
+
+```cpp
+Student s1("Payal", 20);
+```
+
+## Key Points
+
+- Constructors are used to initialize objects.
+- They are called automatically.
+- A class can have multiple constructors.
+- Constructor overloading is supported in C++.
+
+## My Understanding
+
+Constructors help initialize object values at the time of object creation. They reduce the need to assign values separately and make code more organized and readable.
+
+## Practice Done
+
+- Created a default constructor.
+- Created a parameterized constructor.
+- Initialized object data using constructors.
+- Printed object information using a member function.
+
+### Status
+
+✅ Completed Day 2: Constructors in C++
