@@ -1,5 +1,8 @@
-Leetcode 28: Find the Index of the First Occurrence in a String
-Description:
+2 questions solved:
+
+Leetcode 28: Find the Index of the First Occurrence in a String 
+leetcode 349: Intersection of Two Arrays
+Description of 28:
 Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
 Example 1:
@@ -19,5 +22,14 @@ public:
     }
 };
 
+Description of 349:
+Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
 
 it took 0ms ,si i used stl here of c++
