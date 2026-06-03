@@ -1,0 +1,87 @@
+# Day 3 - Destructors in C++
+
+Today I learned about Destructors in C++ and how they are used to clean up resources when an object is destroyed.
+
+## What I Learned today is
+
+### Destructors
+
+A destructor is a special member function that is automatically called when an object goes out of scope or is deleted.
+
+### Features of Destructors
+
+- Destructor name is the same as the class name but preceded by `~`.
+- It does not have a return type.
+- It does not take any parameters.
+- A class can have only one destructor.
+- It is called automatically when an object is destroyed.
+
+## Example Program
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    Student() {
+        cout << "Constructor Called" << endl;
+    }
+
+    ~Student() {
+        cout << "Destructor Called" << endl;
+    }
+};
+
+int main() {
+    Student s1;
+    return 0;
+}
+```
+
+## Output
+
+```
+Constructor Called
+Destructor Called
+```
+
+## How It Works
+
+1. Object `s1` is created.
+2. Constructor is called automatically.
+3. When `main()` ends, the object goes out of scope.
+4. Destructor is called automatically.
+
+## Why Destructors Are Important
+
+Destructors help release resources such as:
+
+- Dynamic memory
+- Open files
+- Database connections
+- Network resources
+
+This prevents memory leaks and improves program efficiency.
+
+## Key Points
+
+- Constructors initialize objects.
+- Destructors clean up objects.
+- Destructor is called automatically.
+- Only one destructor can exist in a class.
+- Destructor cannot be overloaded.
+
+## My Understanding
+
+A destructor works like a cleanup function. Whenever an object's life ends, the destructor executes automatically and frees resources used by that object. This makes memory management easier and safer.
+
+## Practice Done
+
+- Created a class with a constructor and destructor.
+- Observed the order of constructor and destructor calls.
+- Understood the role of destructors in memory management.
+
+### Status
+
+✅ Completed Day 3: Destructors in C++
