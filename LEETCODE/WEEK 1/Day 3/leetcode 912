@@ -1,0 +1,51 @@
+today i solved merge sort type question in leetcode
+question:
+912: Sort an Array
+  my code:
+class Solution {
+public:
+    void merge(vector<int>& v,int l,int mid,int h,vector<int>& temp){
+        int i=l;
+        int j=mid+1;
+        int a=l;
+        while(i<=mid && j<=h){
+            if(v[i]<=v[j]){
+                temp[a++]=v[i++];
+            }else{
+                temp[a++]=v[j++];
+            }
+        }
+        while(i<=mid){
+            temp[a++]=v[i++];
+        }
+        while(j<=h){
+            temp[a++]=v[j++];
+
+        }
+
+        for(int k=l;k<=h;k++){
+            v[k]=temp[k];
+        }
+    }
+    void mergesort(vector<int>& v,int l,int h,vector<int>& temp){
+        
+        if(l>=h) return ;
+        int mid=l+(h-l)/2;
+
+        mergesort(v,l,mid,temp);
+        mergesort(v,mid+1,h,temp);
+
+        merge(v,l,mid,h,temp);
+    }
+
+    vector<int> sortArray(vector<int>& v) {
+        vector<int> temp(v.size());
+       mergesort(v,0,v.size()-1,temp);
+       return v;
+    }
+    
+};
+->
+  it run for runtime 47 seconds.
+  
+  
