@@ -1,0 +1,50 @@
+question:
+today i learned quick sort so tried to solved this 
+75: Sort Colors
+ Today I solved the Sort Colors problem using the Quick Sort algorithm. The array contains only three values: 0, 1, and 2, where each value represents a color. The goal is to arrange all the 0s first, followed by 1s, and then 2s without using the built-in sorting function.
+
+For this solution, I implemented Quick Sort manually. I selected the first element as the pivot and used a partitioning technique to place the pivot in its correct position. After partitioning, I recursively sorted the left and right parts of the array until the entire array became sorted.
+
+
+Example 1:
+
+Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+
+My code->
+  class Solution {
+public:
+    int divide(vector<int>& a,int low,int high){
+        int pivot=a[low];
+        int i=low,j=high;
+        while(i<j){
+            while( i<=j && a[i]<=pivot ){
+                i++;
+            }
+            while( j>=i &&a[j]>pivot  ){
+                j--;
+            }
+            if(i<j){
+                swap(a[i],a[j]);
+            }
+          
+
+        }
+          swap(a[j],a[low]);
+          return j;
+    }
+
+    void quicksort(vector<int>& v,int low,int high){
+        if(low<high){
+            int p=divide(v,low,high);
+            quicksort(v,low,p-1);
+            quicksort(v,p+1,high);
+        }
+    }
+
+    void sortColors(vector<int>& nums) {
+        int high=nums.size()-1;
+        quicksort(nums,0,high);
+
+    }
+};
