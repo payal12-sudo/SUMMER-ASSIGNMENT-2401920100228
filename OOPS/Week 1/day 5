@@ -1,0 +1,69 @@
+Day 5 - Types of Inheritance in C++
+
+After understanding the basics of inheritance, today I explored the different types of inheritance supported in C++.
+
+Different situations require different inheritance structures, so C++ provides multiple ways to inherit classes.
+
+Types of Inheritance
+
+1. Single Inheritance
+
+One derived class inherits from one base class.
+
+Example:
+
+Animal → Dog
+
+2. Multilevel Inheritance
+
+A derived class becomes the base class for another class.
+
+Example:
+
+Animal → Mammal → Dog
+
+3. Multiple Inheritance
+
+A class inherits from more than one base class.
+
+Example:
+
+Teacher + Researcher → Professor
+
+4. Hierarchical Inheritance
+
+Multiple derived classes inherit from the same base class.
+
+Example:
+
+Animal → Dog
+
+Animal → Cat
+
+Animal → Cow
+
+5. Hybrid Inheritance
+
+A combination of two or more inheritance types.
+
+Example of Single Inheritance------------>
+
+  #include <iostream>
+using namespace std;
+
+class Vehicle {
+public:
+    void start() {
+        cout << "Vehicle Started" << endl;
+    }
+};
+
+class Car : public Vehicle {
+};
+
+int main() {
+    Car c;
+    c.start();
+
+    return 0;
+}
