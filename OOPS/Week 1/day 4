@@ -1,0 +1,244 @@
+# Day 4 - Encapsulation in C++
+
+Today I learned about Encapsulation, one of the four pillars of Object-Oriented Programming. Encapsulation helps protect data by restricting direct access and allowing controlled access through public methods.
+
+---
+
+## What is Encapsulation?
+
+Encapsulation is the process of wrapping data members and member functions into a single unit called a class.
+
+In simple words, encapsulation means hiding the internal details of an object and providing a controlled way to access them.
+
+Real-life example:
+
+Think of an ATM machine. As a user, you can withdraw money, check your balance, and deposit money. However, you do not know how the machine processes these operations internally. The implementation details are hidden from you.
+
+This is the concept of encapsulation.
+
+---
+
+## Why Do We Need Encapsulation?
+
+Without encapsulation, anyone can directly modify the data of an object, which can lead to invalid values and bugs.
+
+Encapsulation provides:
+
+- Data Security
+- Better Code Organization
+- Controlled Access to Data
+- Improved Maintainability
+- Better Reusability
+
+---
+
+## Access Specifiers in C++
+
+Access specifiers determine how class members can be accessed.
+
+### Private
+
+Members declared as private can only be accessed inside the class.
+
+```cpp
+private:
+    int age;
+```
+
+### Public
+
+Members declared as public can be accessed from anywhere.
+
+```cpp
+public:
+    void display();
+```
+
+### Protected
+
+Members declared as protected can be accessed within the class and derived classes.
+
+```cpp
+protected:
+    int salary;
+```
+
+---
+
+## Example Program
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int age;
+
+public:
+    void setAge(int a) {
+        if(a > 0) {
+            age = a;
+        }
+    }
+
+    int getAge() {
+        return age;
+    }
+};
+
+int main() {
+
+    Student s1;
+
+    s1.setAge(20);
+
+    cout << "Student Age: " << s1.getAge();
+
+    return 0;
+}
+```
+
+---
+
+## Output
+
+```text
+Student Age: 20
+```
+
+---
+
+## How Encapsulation Works
+
+In the above program:
+
+1. The variable `age` is private.
+2. It cannot be accessed directly outside the class.
+3. The function `setAge()` is used to assign a value.
+4. The function `getAge()` is used to retrieve the value.
+5. Data remains protected from unauthorized access.
+
+---
+
+## What Happens If We Access Private Data Directly?
+
+```cpp
+Student s1;
+
+s1.age = 20;
+```
+
+This will produce an error because `age` is a private member.
+
+Private members can only be accessed through public methods.
+
+---
+
+## Advantages of Encapsulation
+
+### 1. Data Hiding
+
+Sensitive data remains protected from external access.
+
+### 2. Better Security
+
+Users cannot accidentally modify important variables.
+
+### 3. Easy Maintenance
+
+Changes in implementation do not affect the external code.
+
+### 4. Increased Flexibility
+
+Validation can be added before assigning values.
+
+Example:
+
+```cpp
+void setAge(int a) {
+    if(a > 0)
+        age = a;
+}
+```
+
+This prevents invalid ages from being stored.
+
+---
+
+## Getter and Setter Functions
+
+Getter and Setter methods are commonly used in encapsulation.
+
+### Setter
+
+Used to assign values.
+
+```cpp
+void setAge(int a) {
+    age = a;
+}
+```
+
+### Getter
+
+Used to retrieve values.
+
+```cpp
+int getAge() {
+    return age;
+}
+```
+
+---
+
+## Real-World Applications
+
+Encapsulation is widely used in:
+
+- Banking Systems
+- Hospital Management Systems
+- Student Management Systems
+- Employee Databases
+- E-commerce Applications
+
+These systems hide sensitive information and provide controlled access through functions.
+
+---
+
+## Key Takeaways
+
+- Encapsulation is the binding of data and methods into a single unit.
+- It helps achieve data hiding.
+- Private members cannot be accessed directly.
+- Public methods provide controlled access.
+- Getter and Setter functions are commonly used.
+- Encapsulation improves security and maintainability.
+
+---
+
+## My Understanding
+
+Today I understood that encapsulation is not just about hiding data. It is about protecting data and ensuring that it is modified only through valid operations. By making variables private and providing public methods, we can build safer and more reliable applications.
+
+This concept is one of the most important foundations of Object-Oriented Programming and is used in almost every real-world software application.
+
+---
+
+## Practice Tasks Completed
+
+✅ Created a class with private data members
+
+✅ Implemented Getter and Setter methods
+
+✅ Restricted direct access to variables
+
+✅ Added validation before assigning values
+
+✅ Understood data hiding and security
+
+---
+
+## Status
+
+✅ Completed Day 4: Encapsulation in C++
