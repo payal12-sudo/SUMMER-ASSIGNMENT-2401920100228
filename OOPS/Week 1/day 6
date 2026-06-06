@@ -1,0 +1,56 @@
+Day 6 - Encapsulation in C++
+
+Today I learned about Encapsulation, one of the four main pillars of Object-Oriented Programming. While inheritance helps in code reusability, encapsulation helps in protecting data from unwanted access.
+
+I found this concept very useful because it makes programs more secure and organized.
+
+What is Encapsulation?
+
+Encapsulation means wrapping data members and member functions together inside a single unit called a class.
+
+It also means restricting direct access to data and allowing access only through public member functions.
+
+In simple words, encapsulation is data hiding with controlled access.
+
+
+
+  Access Specifiers
+
+C++ provides three access specifiers:
+
+Public
+
+Members declared as public can be accessed from anywhere.
+
+  #include <iostream>
+using namespace std;
+
+class Student {
+
+private:
+    int age;
+
+public:
+
+    void setAge(int a) {
+        age = a;
+    }
+
+    int getAge() {
+        return age;
+    }
+};
+
+int main() {
+
+    Student s;
+
+    s.setAge(20);
+
+    cout << "Age = " << s.getAge();
+
+    return 0;
+}
+My Understanding
+
+Today I understood that encapsulation is not only about hiding data but also about protecting it. Instead of allowing direct access to variables, we provide controlled access through member functions. This makes the program safer and easier to maintain as it grows larger.
