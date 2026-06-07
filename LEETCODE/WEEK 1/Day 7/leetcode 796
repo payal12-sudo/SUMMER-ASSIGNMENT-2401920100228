@@ -1,0 +1,42 @@
+796: reverse string
+Given two strings s and goal, return true if and only if s can become goal after some number of shifts on s.
+
+A shift on s consists of moving the leftmost character of s to the rightmost position.
+
+For example, if s = "abcde", then it will be "bcdea" after one shift.
+my solution------------------------>
+class Solution {
+public:
+    string reverseString(string s, int l, int r) {
+        while (l < r) {
+            swap(s[l], s[r]);
+            l++;
+            r--;
+        }
+        return s;
+    }
+
+    string rotateLeft(string s, int d) {
+        int n = s.length();
+
+        s = reverseString(s, 0, d - 1);
+        s = reverseString(s, d, n - 1);
+        s = reverseString(s, 0, n - 1);
+
+        return s;
+    }
+
+    bool rotateString(string s, string goal) {
+        if (s.length() != goal.length())
+            return false;
+
+        int n = s.length();
+
+        for (int d=0; d<n; d++) {
+            if(rotateLeft(s, d) ==goal)
+                return true;
+        }
+
+        return false;
+    }
+};
