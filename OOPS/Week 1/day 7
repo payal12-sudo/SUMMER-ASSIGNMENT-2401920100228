@@ -1,0 +1,65 @@
+Day 6 - Access Specifiers in C++
+
+Today I learned about access specifiers in C++. After learning about encapsulation, I wanted to understand how C++ actually controls access to data inside a class.
+
+I found that access specifiers help decide which variables and functions should be available to everyone and which should stay hidden.
+
+What are Access Specifiers?
+
+Access specifiers are keywords that control the visibility of class members.
+
+C++ provides three access specifiers:
+
+* public
+* private
+* protected
+
+They help us protect data and control how a class is used.
+
+Public
+
+Members declared as public can be accessed from anywhere in the program.
+  Private
+
+Members declared as private cannot be accessed directly outside the class.
+
+  Protected
+
+Protected members are similar to private members, but they can be accessed by derived classes when inheritance is used.
+
+I haven’t used protected much yet, but I learned that it becomes important while working with inheritance.
+
+Program I Tried
+  #include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+
+private:
+    int age;
+
+public:
+    void setAge(int a) {
+        age = a;
+    }
+
+    int getAge() {
+        return age;
+    }
+};
+
+int main() {
+
+    Student s;
+
+    s.name = "Payal";
+
+    s.setAge(20);
+
+    cout << "Name: " << s.name << endl;
+    cout << "Age: " << s.getAge() << endl;
+
+    return 0;
+}
