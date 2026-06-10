@@ -1,0 +1,27 @@
+Java Interface and Package Demo
+
+This is a simple Java project created to practice interfaces, packages, and polymorphism. It contains two musical instrument classes, Veena and Saxophone, that implement a common Playable interface.
+
+The project is useful for beginners who want to understand how Java organizes classes into packages and how interfaces help achieve abstraction and code reusability.
+
+What this project includes
+
+* A Playable interface with a play() method.
+* A Veena class that implements the interface.
+* A Saxophone class that implements the interface.
+* A Test class that demonstrates method calls and interface-based polymorphism.
+
+Concepts Used
+
+* Java Interfaces
+* Packages and Imports
+* Method Overriding
+* Runtime Polymorphism
+* Object-Oriented Programming (OOP)
+
+output:
+
+Playing Veena
+Playing Saxophone
+Playing Veena
+Playing Saxophone
