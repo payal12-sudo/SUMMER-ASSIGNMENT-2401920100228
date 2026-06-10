@@ -1,1 +1,63 @@
 
+
+Day 7 - Friend Function in C++
+
+Today I learned about friend functions in C++. At first, I thought private members of a class could only be accessed by member functions. But I found that C++ provides a special feature called a friend function that can access private and protected members even though it is not a member of the class.
+It felt a little unusual at first, but after writing a few programs, the concept became much clearer.
+
+What is a Friend Function?
+A friend function is a normal function that is given special permission to access the private and protected members of a class.
+It is declared inside the class using the friend keyword but defined outside the class.
+
+
+  #include <iostream>
+using namespace std;
+
+class Student {
+
+private:
+    string name;
+    int age;
+
+public:
+
+    Student(string n, int a) {
+        name = n;
+        age = a;
+      
+    }
+  What I Observed
+
+* The function display() is not a member of the class.
+* Even though name and age are private, the friend function can access them.
+* The friend keyword gives special permission to the function.
+
+Why Use Friend Functions?
+
+Friend functions are useful when:
+
+* Two classes need to share data.
+* Operator overloading requires access to private members.
+* External functions need controlled access to class data.
+
+Although they are useful, they should be used only when necessary because they reduce data hiding.
+
+Things to Remember
+
+    friend void display(Student s);
+};
+
+void display(Student s) {
+
+    cout << "Name: " << s.name << endl;
+    cout << "Age: " << s.age << endl;
+}
+
+int main() {
+
+    Student s1("Payal", 20);
+
+    display(s1);
+
+    return 0;
+}
