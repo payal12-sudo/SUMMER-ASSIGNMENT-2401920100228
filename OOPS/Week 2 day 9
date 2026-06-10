@@ -1,0 +1,34 @@
+Day 8 - Polymorphism in C++
+
+Today I started learning about Polymorphism, another important concept of Object-Oriented Programming. The word polymorphism means “many forms.” In programming, it means that the same function or interface can behave differently in different situations.
+
+At first the name sounded complicated, but after reading examples I realized that I had already seen similar behavior in everyday life.
+
+What is Polymorphism?
+
+Polymorphism allows the same function or object to perform different tasks depending on how it is used.
+
+For example, a person can be a student at college, a friend with friends, and a child at home. The same person behaves differently in different situations.
+
+Similarly, in C++, the same function name can have different behaviors.
+
+⸻
+
+Types of Polymorphism
+
+There are mainly two types of polymorphism in C++:
+
+* Compile-Time Polymorphism
+* Run-Time Polymorphism
+
+Compile-time polymorphism is achieved using:
+
+* Function Overloading
+* Operator Overloading
+
+Run-time polymorphism is achieved using:
+
+* Function Overriding
+* Virtual Functions
+
+I will study these topics in detail over the next few days.
