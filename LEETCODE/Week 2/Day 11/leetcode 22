@@ -17,7 +17,6 @@ public:
             solve(curr + "(", open + 1, close, n);
         }
 
-        // Add ')' only if it keeps the string valid
         if (close < open) {
             solve(curr + ")", open, close + 1, n);
         }
