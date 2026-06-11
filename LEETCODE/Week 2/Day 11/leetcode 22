@@ -6,13 +6,13 @@ public:
 
     void solve(string curr, int open, int close, int n) {
 
-        // If the string is complete, store it
+    
         if (curr.length() == 2 * n) {
             ans.push_back(curr);
             return;
         }
 
-        // Add '(' if possible
+       
         if (open < n) {
             solve(curr + "(", open + 1, close, n);
         }
